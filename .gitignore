@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Next.js build and cache outputs
+.next/
+out/
+
+# Production builds
+build/

@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #FAF3E6;
+  --color-cream-dim: #F2E8D5;
+  --color-espresso: #2E1F16;
+  --color-espresso-soft: #4A362A;
+  --color-brick: #A8442F;
+  --color-brick-soft: #C8664C;
+  --color-sage: #6E7C55;
+  --color-butter: #E4B44C;
+  --color-line: #E1D3B8;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-dim: var(--color-cream-dim);
+  --color-espresso: var(--color-espresso);
+  --color-espresso-soft: var(--color-espresso-soft);
+  --color-brick: var(--color-brick);
+  --color-brick-soft: var(--color-brick-soft);
+  --color-sage: var(--color-sage);
+  --color-butter: var(--color-butter);
+  --color-line: var(--color-line);
+  --font-display: var(--font-fraunces, Georgia, "Times New Roman", serif);
+  --font-body: var(--font-worksans, ui-sans-serif, system-ui, sans-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-espresso);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+.eyebrow {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-brick);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brick);
+  outline-offset: 2px;
+}
+
+.icing-divider {
+  height: 10px;
+  background-image: radial-gradient(circle at 10px 0, transparent 9px, var(--color-cream-dim) 10px);
+  background-size: 20px 10px;
+  background-repeat: repeat-x;
+}
