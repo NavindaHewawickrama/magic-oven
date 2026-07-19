@@ -16,7 +16,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
         )}
         {product.popular && product.inStock && (
-          <span className="absolute right-2 top-2 rounded-full bg-brick px-2 py-1 text-[10px] font-semibold text-cream">
+          <span className="absolute right-2 top-2 rounded-full bg-peach px-2 py-1 text-[10px] font-semibold text-espresso">
             Popular
           </span>
         )}

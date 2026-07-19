@@ -27,8 +27,8 @@ export default function AboutPage() {
         <div className="mt-6 space-y-6 border-l-2 border-line pl-6">
           {milestones.map((m) => (
             <div key={m.year} className="relative">
-              <span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-brick" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-brick">{m.year}</p>
+              <span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-peach-dark" />
+              <p className="text-xs font-semibold uppercase tracking-wide text-peach-dark">{m.year}</p>
               <p className="mt-1 text-espresso">{m.text}</p>
             </div>
           ))}
@@ -42,7 +42,7 @@ export default function AboutPage() {
           { label: "Years baking", value: "7" },
         ].map((s) => (
           <div key={s.label} className="rounded-2xl border border-line bg-white/80 p-6 text-center">
-            <p className="font-display text-3xl font-semibold text-brick">{s.value}</p>
+            <p className="font-display text-3xl font-semibold text-peach-dark">{s.value}</p>
             <p className="mt-1 text-sm text-espresso">{s.label}</p>
           </div>
         ))}

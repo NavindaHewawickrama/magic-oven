@@ -16,7 +16,7 @@ export default function LoginPage() {
           <input type="password" required placeholder="••••••••" className="mt-1.5 w-full rounded-xl border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
         </div>
         <div className="flex justify-end">
-          <Link href="/forgot-password" className="text-xs font-medium text-brick">Forgot password?</Link>
+          <Link href="/forgot-password" className="text-xs font-medium text-peach-dark">Forgot password?</Link>
         </div>
         <button type="submit" className="w-full rounded-full bg-brick py-2.5 text-sm font-semibold text-cream hover:brightness-110">
           Log in
@@ -24,7 +24,7 @@ export default function LoginPage() {
       </form>
       <p className="mt-6 text-center text-sm text-espresso">
         Don't have an account?{" "}
-        <Link href="/register" className="font-semibold text-brick">Register</Link>
+        <Link href="/register" className="font-semibold text-peach-dark">Register</Link>
       </p>
     </AuthCard>
   );

@@ -15,7 +15,7 @@ export default function ContactBlock() {
       <div className="space-y-4 rounded-2xl border border-line bg-white/80 p-6">
         {rows.map((r) => (
           <div key={r.label} className="flex items-start gap-3">
-            <r.icon size={18} className="mt-0.5 shrink-0 text-brick" />
+            <r.icon size={18} className="mt-0.5 shrink-0 text-peach-dark" />
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">{r.label}</p>
               <p className="text-sm text-espresso">{r.value}</p>

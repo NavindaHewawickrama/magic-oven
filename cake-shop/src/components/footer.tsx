@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="eyebrow text-butter">Explore</p>
+          <p className="eyebrow text-peach">Explore</p>
           <ul className="mt-3 space-y-2 text-sm text-cream/85">
             <li><Link href="/products">Cake catalog</Link></li>
             <li><Link href="/builder">Build your cake</Link></li>
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="eyebrow text-butter">Account</p>
+          <p className="eyebrow text-peach">Account</p>
           <ul className="mt-3 space-y-2 text-sm text-cream/85">
             <li><Link href="/login">Login</Link></li>
             <li><Link href="/register">Register</Link></li>
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="eyebrow text-butter">Visit</p>
+          <p className="eyebrow text-peach">Visit</p>
           <ul className="mt-3 space-y-2 text-sm text-cream/85">
             <li>{businessSettings.address}</li>
             <li>{businessSettings.hours}</li>

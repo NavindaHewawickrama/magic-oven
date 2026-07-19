@@ -107,7 +107,7 @@ export default function BuilderPage() {
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <button
               onClick={takeScreenshot}
-              className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-5 py-2.5 text-sm font-semibold text-espresso hover:border-brick hover:text-brick"
+              className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-5 py-2.5 text-sm font-semibold text-espresso hover:border-peach-dark hover:text-peach-dark"
             >
               <Camera size={16} /> Take screenshot
             </button>

@@ -48,7 +48,7 @@ export default function AdminNoticesPage() {
             </div>
           </div>
         ))}
-        {notices.length === 0 && <p className="text-sm text-espresso">No notices yet.</p>}
+        {notices.length === 0 && <p className="text-sm text-espresso-soft">No notices yet.</p>}
       </div>
     </DashboardShell>
   );

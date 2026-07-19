@@ -28,7 +28,7 @@ export default function AdminHeroBannerPage() {
           </div>
           <div>
             <label className="text-xs font-semibold uppercase text-espresso-soft">Background image</label>
-            <div className="mt-1 flex h-24 items-center justify-center rounded-xl border border-dashed border-line text-xs text-espresso">
+            <div className="mt-1 flex h-24 items-center justify-center rounded-xl border border-dashed border-line text-xs text-espresso-soft">
               Drop image here or click to upload
             </div>
           </div>

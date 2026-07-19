@@ -16,7 +16,7 @@ export default function ForgotPasswordPage() {
         </button>
       </form>
       <p className="mt-6 text-center text-sm text-espresso">
-        <Link href="/login" className="font-semibold text-brick">Back to login</Link>
+        <Link href="/login" className="font-semibold text-peach-dark">Back to login</Link>
       </p>
     </AuthCard>
   );

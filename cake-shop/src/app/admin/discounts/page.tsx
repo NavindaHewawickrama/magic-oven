@@ -28,7 +28,7 @@ export default function AdminDiscountsPage() {
             <div>
               <p className="text-sm font-semibold">{d.title}</p>
               <p className="mt-1 font-display text-xl font-semibold text-brick">{d.percentage}% — {d.code}</p>
-              <p className="mt-1 text-xs text-espresso">Expires {d.expiry}</p>
+              <p className="mt-1 text-xs text-espresso-soft">Expires {d.expiry}</p>
             </div>
             <button onClick={() => remove(d.id)}><Trash2 size={16} className="text-espresso-soft hover:text-brick" /></button>
           </div>

@@ -32,7 +32,7 @@ export default function AdminFeedbackPage() {
             <div key={g.id} className="rounded-2xl border border-line bg-white/80 p-5">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold">{g.author} · {g.date}</p>
-                <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${g.approved ? "bg-sage/15 text-sage" : "bg-butter/20 text-espresso-soft"}`}>
+                <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${g.approved ? "bg-sage/15 text-sage" : "bg-peach/30 text-espresso-soft"}`}>
                   {g.approved ? "Approved" : "Pending"}
                 </span>
               </div>

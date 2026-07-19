@@ -18,7 +18,7 @@ export default function AdminDashboardPage() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="rounded-2xl border border-line bg-white/80 p-5">
-            <s.icon className="text-brick" size={18} />
+            <s.icon className="text-peach-dark" size={18} />
             <p className="mt-3 font-display text-2xl font-semibold">{s.value}</p>
             <p className="text-sm text-espresso-soft">{s.label}</p>
           </div>

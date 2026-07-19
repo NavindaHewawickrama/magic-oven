@@ -95,7 +95,7 @@ export default function Home() {
       {/* Build your own CTA */}
       <section className="mx-auto max-w-6xl px-5 py-16">
         <div className="flex flex-col items-center gap-6 rounded-3xl bg-espresso-soft px-8 py-14 text-center text-cream md:px-16">
-          <p className="eyebrow text-butter">The Cake Builder</p>
+          <p className="eyebrow text-peach">The Cake Builder</p>
           <h2 className="max-w-xl font-display text-3xl font-semibold md:text-4xl">
             Not seeing exactly what you want? Design it yourself in 3D.
           </h2>
@@ -105,7 +105,7 @@ export default function Home() {
           </p>
           <Link
             href="/builder"
-            className="inline-flex items-center gap-2 rounded-full bg-butter px-6 py-3 text-sm font-semibold text-espresso transition hover:brightness-105"
+            className="inline-flex items-center gap-2 rounded-full bg-peach px-6 py-3 text-sm font-semibold text-espresso transition hover:brightness-105"
           >
             Open the Cake Builder <ArrowRight size={16} />
           </Link>
