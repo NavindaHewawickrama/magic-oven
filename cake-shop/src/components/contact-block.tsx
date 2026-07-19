@@ -12,7 +12,7 @@ const rows = [
 export default function ContactBlock() {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      <div className="space-y-4 rounded-2xl border border-line bg-white/70 p-6">
+      <div className="space-y-4 rounded-2xl border border-line bg-white/80 p-6">
         {rows.map((r) => (
           <div key={r.label} className="flex items-start gap-3">
             <r.icon size={18} className="mt-0.5 shrink-0 text-brick" />

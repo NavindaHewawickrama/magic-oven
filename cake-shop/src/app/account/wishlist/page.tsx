@@ -12,7 +12,7 @@ const nav = [
 export default function WishlistPage() {
   return (
     <DashboardShell title="Wishlist" subtitle="Customer dashboard" nav={nav} activeHref="/account/wishlist">
-      <div className="rounded-2xl border border-dashed border-line bg-white/60 p-10 text-center text-sm text-espresso-soft">
+      <div className="rounded-2xl border border-dashed border-line bg-white/70 p-10 text-center text-sm text-espresso">
         💛 Wishlists are coming in a future update — save your favorite cakes here for next time.
       </div>
     </DashboardShell>

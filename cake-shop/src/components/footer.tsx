@@ -4,17 +4,17 @@ import { MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-espresso text-cream">
+    <footer className="border-t border-line bg-espresso-soft text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
             <span className="text-2xl">🍰</span>
             <span className="font-display text-lg font-semibold">Sweet Layers</span>
           </div>
-          <p className="mt-3 text-sm text-cream/70">
+          <p className="mt-3 text-sm text-cream/80">
             Handmade cakes, designed with you — from our kitchen in Ratnapura to your table.
           </p>
-          <div className="mt-4 flex gap-3 text-lg text-cream/80">
+          <div className="mt-4 flex gap-3 text-lg text-cream/90">
             <span aria-label="Instagram">📷</span>
             <span aria-label="Facebook">👍</span>
             <MessageCircle size={18} />
@@ -23,7 +23,7 @@ export default function Footer() {
 
         <div>
           <p className="eyebrow text-butter">Explore</p>
-          <ul className="mt-3 space-y-2 text-sm text-cream/80">
+          <ul className="mt-3 space-y-2 text-sm text-cream/85">
             <li><Link href="/products">Cake catalog</Link></li>
             <li><Link href="/builder">Build your cake</Link></li>
             <li><Link href="/about">About us</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
 
         <div>
           <p className="eyebrow text-butter">Account</p>
-          <ul className="mt-3 space-y-2 text-sm text-cream/80">
+          <ul className="mt-3 space-y-2 text-sm text-cream/85">
             <li><Link href="/login">Login</Link></li>
             <li><Link href="/register">Register</Link></li>
             <li><Link href="/account">My dashboard</Link></li>
@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div>
           <p className="eyebrow text-butter">Visit</p>
-          <ul className="mt-3 space-y-2 text-sm text-cream/80">
+          <ul className="mt-3 space-y-2 text-sm text-cream/85">
             <li>{businessSettings.address}</li>
             <li>{businessSettings.hours}</li>
             <li>{businessSettings.phone}</li>
@@ -51,7 +51,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-cream/10 px-5 py-4 text-center text-xs text-cream/50">
+      <div className="border-t border-cream/15 px-5 py-4 text-center text-xs text-cream/60">
         © {new Date().getFullYear()} Sweet Layers Cake Studio. All orders are confirmed over WhatsApp.
       </div>
     </footer>

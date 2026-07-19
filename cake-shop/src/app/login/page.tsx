@@ -9,11 +9,11 @@ export default function LoginPage() {
       <form className="space-y-4">
         <div>
           <label className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">Email</label>
-          <input type="email" required placeholder="you@example.com" className="mt-1.5 w-full rounded-xl border border-line bg-cream px-4 py-2.5 text-sm outline-none focus:border-brick" />
+          <input type="email" required placeholder="you@example.com" className="mt-1.5 w-full rounded-xl border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
         </div>
         <div>
           <label className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">Password</label>
-          <input type="password" required placeholder="••••••••" className="mt-1.5 w-full rounded-xl border border-line bg-cream px-4 py-2.5 text-sm outline-none focus:border-brick" />
+          <input type="password" required placeholder="••••••••" className="mt-1.5 w-full rounded-xl border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
         </div>
         <div className="flex justify-end">
           <Link href="/forgot-password" className="text-xs font-medium text-brick">Forgot password?</Link>
@@ -22,7 +22,7 @@ export default function LoginPage() {
           Log in
         </button>
       </form>
-      <p className="mt-6 text-center text-sm text-espresso-soft">
+      <p className="mt-6 text-center text-sm text-espresso">
         Don't have an account?{" "}
         <Link href="/register" className="font-semibold text-brick">Register</Link>
       </p>

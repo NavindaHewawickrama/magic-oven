@@ -97,7 +97,7 @@ export default function BuilderPage() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_380px]">
         {/* 3D canvas */}
         <div className="order-2 lg:order-1">
-          <div className="relative h-[420px] overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream-dim to-white md:h-[560px]">
+          <div className="relative h-[420px] overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream-dim to-white/90 md:h-[560px]">
             <CakeSceneWithRef config={config} ref={canvasRef} />
             <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-espresso/80 px-3 py-1.5 text-xs text-cream">
               <RotateCw size={12} /> Drag to rotate · scroll to zoom
@@ -193,7 +193,7 @@ export default function BuilderPage() {
           <Field label="7. Decorations"><Pills options={decorations} value={config.decoration} onChange={(v) => update("decoration", v)} /></Field>
           <Field label="8. Toppings"><Pills options={toppings} value={config.topping} onChange={(v) => update("topping", v)} /></Field>
 
-          <div className="rounded-2xl border border-line bg-white/70 p-4">
+          <div className="rounded-2xl border border-line bg-white/80 p-4">
             <WhatsAppButton href={whatsappOrderLink(message)} label="Send this cake to WhatsApp" full />
             <p className="mt-2 flex items-center gap-1 text-center text-xs text-espresso-soft">
               <ArrowRight size={12} /> Take a screenshot first so you can attach it in the chat.

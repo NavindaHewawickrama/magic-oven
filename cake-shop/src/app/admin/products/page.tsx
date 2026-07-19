@@ -29,9 +29,9 @@ export default function AdminProductsPage() {
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-2xl border border-line bg-white/70">
+      <div className="overflow-x-auto rounded-2xl border border-line bg-white/80">
         <table className="w-full min-w-[640px] text-left text-sm">
-          <thead className="border-b border-line bg-cream-dim/60 text-xs uppercase tracking-wide text-espresso-soft">
+          <thead className="border-b border-line bg-cream-dim/70 text-xs uppercase tracking-wide text-espresso-soft">
             <tr>
               <th className="px-4 py-3">Product</th>
               <th className="px-4 py-3">Category</th>
@@ -48,7 +48,7 @@ export default function AdminProductsPage() {
                   <span className="text-2xl">{p.thumbnail}</span>
                   <span className="font-medium">{p.name}</span>
                 </td>
-                <td className="px-4 py-3 text-espresso-soft">{p.category}</td>
+                <td className="px-4 py-3 text-espresso">{p.category}</td>
                 <td className="px-4 py-3">{p.price > 0 ? `Rs. ${p.price.toLocaleString()}` : "Custom"}</td>
                 <td className="px-4 py-3"><StarRating rating={p.rating} /></td>
                 <td className="px-4 py-3">
@@ -76,7 +76,7 @@ export default function AdminProductsPage() {
 
       {showForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-espresso/40 px-4">
-          <div className="w-full max-w-lg rounded-3xl bg-cream p-6">
+          <div className="w-full max-w-lg rounded-3xl bg-cream-dim p-6">
             <div className="flex items-center justify-between">
               <p className="font-display text-xl font-semibold">{editing ? "Edit product" : "New product"}</p>
               <button onClick={() => setShowForm(false)}><X size={18} /></button>
@@ -106,7 +106,7 @@ export default function AdminProductsPage() {
                 </div>
                 <div className="col-span-2">
                   <label className="text-xs font-semibold uppercase text-espresso-soft">Images</label>
-                  <div className="mt-1 flex h-20 items-center justify-center rounded-xl border border-dashed border-line text-xs text-espresso-soft">
+                  <div className="mt-1 flex h-20 items-center justify-center rounded-xl border border-dashed border-line text-xs text-espresso">
                     Drop images here or click to upload (Supabase Storage)
                   </div>
                 </div>

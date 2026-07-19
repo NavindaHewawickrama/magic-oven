@@ -35,7 +35,7 @@ export default function AdminNoticesPage() {
 
       <div className="space-y-3">
         {notices.map((n) => (
-          <div key={n.id} className="flex items-center justify-between rounded-2xl border border-line bg-white/70 p-4">
+          <div key={n.id} className="flex items-center justify-between rounded-2xl border border-line bg-white/80 p-4">
             <p className="text-sm">{n.message}</p>
             <div className="flex items-center gap-3">
               <button
@@ -48,7 +48,7 @@ export default function AdminNoticesPage() {
             </div>
           </div>
         ))}
-        {notices.length === 0 && <p className="text-sm text-espresso-soft">No notices yet.</p>}
+        {notices.length === 0 && <p className="text-sm text-espresso">No notices yet.</p>}
       </div>
     </DashboardShell>
   );

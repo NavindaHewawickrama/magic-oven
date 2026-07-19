@@ -12,7 +12,7 @@ export default function FeedbackForm() {
 
   if (!MOCK_IS_LOGGED_IN) {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-line bg-white/60 px-6 py-10 text-center">
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-line bg-white/70 px-6 py-10 text-center">
         <Lock className="text-brick" size={22} />
         <p className="text-sm text-espresso-soft">
           Please log in to leave feedback. This helps us keep reviews trustworthy.
@@ -31,7 +31,7 @@ export default function FeedbackForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-line bg-white/70 px-6 py-8 text-center text-sm text-espresso-soft">
+      <div className="rounded-2xl border border-line bg-white/80 px-6 py-8 text-center text-sm text-espresso-soft">
         Thank you! Your feedback has been sent for review and will appear once approved.
       </div>
     );
@@ -43,7 +43,7 @@ export default function FeedbackForm() {
         e.preventDefault();
         setSubmitted(true);
       }}
-      className="flex flex-col gap-4 rounded-2xl border border-line bg-white/70 p-6"
+      className="flex flex-col gap-4 rounded-2xl border border-line bg-white/80 p-6"
     >
       <textarea
         required

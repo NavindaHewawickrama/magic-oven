@@ -16,11 +16,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-cream/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl">🍰</span>
-          <span className="font-display text-xl font-semibold tracking-tight text-espresso">
+          <span className="font-display text-xl font-semibold tracking-tight text-espresso-soft">
             Sweet Layers
           </span>
         </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-line bg-cream px-5 pb-5 md:hidden">
+        <div className="border-t border-line bg-white px-5 pb-5 md:hidden">
           <nav className="flex flex-col gap-3 pt-3">
             {links.map((l) => (
               <Link

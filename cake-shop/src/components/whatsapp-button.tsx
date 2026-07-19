@@ -14,7 +14,7 @@ export default function WhatsAppButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-sage px-5 py-2.5 text-sm font-semibold text-cream transition hover:brightness-110 ${
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-brick px-5 py-2.5 text-sm font-semibold text-cream transition hover:brightness-110 ${
         full ? "w-full" : ""
       }`}
     >

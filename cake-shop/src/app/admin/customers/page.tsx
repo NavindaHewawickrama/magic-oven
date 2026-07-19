@@ -14,9 +14,9 @@ export const metadata = { title: "Customers — Admin" };
 export default function AdminCustomersPage() {
   return (
     <DashboardShell title="Customers" subtitle="Admin CMS" nav={adminNav} activeHref="/admin/customers">
-      <div className="overflow-x-auto rounded-2xl border border-line bg-white/70">
+      <div className="overflow-x-auto rounded-2xl border border-line bg-white/80">
         <table className="w-full min-w-[560px] text-left text-sm">
-          <thead className="border-b border-line bg-cream-dim/60 text-xs uppercase tracking-wide text-espresso-soft">
+          <thead className="border-b border-line bg-cream-dim/70 text-xs uppercase tracking-wide text-espresso-soft">
             <tr>
               <th className="px-4 py-3">Name</th>
               <th className="px-4 py-3">Email</th>
@@ -28,9 +28,9 @@ export default function AdminCustomersPage() {
             {customers.map((c) => (
               <tr key={c.email} className="border-b border-line last:border-0">
                 <td className="px-4 py-3 font-medium">{c.name}</td>
-                <td className="px-4 py-3 text-espresso-soft">{c.email}</td>
-                <td className="px-4 py-3 text-espresso-soft">{c.joined}</td>
-                <td className="px-4 py-3 text-espresso-soft">{c.orders}</td>
+                <td className="px-4 py-3 text-espresso">{c.email}</td>
+                <td className="px-4 py-3 text-espresso">{c.joined}</td>
+                <td className="px-4 py-3 text-espresso">{c.orders}</td>
               </tr>
             ))}
           </tbody>

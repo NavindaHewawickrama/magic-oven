@@ -39,7 +39,7 @@ export default function ProductCatalog() {
           <label className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">
             Search
           </label>
-          <div className="mt-2 flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2">
+          <div className="mt-2 flex items-center gap-2 rounded-full border border-line bg-white/80 px-4 py-2">
             <Search size={15} className="text-espresso-soft" />
             <input
               value={query}
@@ -110,7 +110,7 @@ export default function ProductCatalog() {
           {filtered.length} cake{filtered.length !== 1 ? "s" : ""} found
         </p>
         {pageItems.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-line py-16 text-center text-sm text-espresso-soft">
+          <div className="rounded-2xl border border-dashed border-line py-16 text-center text-sm text-espresso">
             No cakes match those filters — try widening your search.
           </div>
         ) : (

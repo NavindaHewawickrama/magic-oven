@@ -11,13 +11,13 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16">
-      <h1 className="font-display text-4xl font-semibold">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-espresso-soft">Last updated July 2026 — placeholder text for demo purposes.</p>
+      <h1 className="font-display text-4xl font-semibold text-espresso-soft">Privacy Policy</h1>
+      <p className="mt-2 text-sm text-espresso">Last updated July 2026 — placeholder text for demo purposes.</p>
       <div className="mt-10 space-y-8">
         {sections.map((s) => (
           <div key={s.h}>
-            <h2 className="font-display text-xl font-semibold">{s.h}</h2>
-            <p className="mt-2 text-espresso-soft">{s.p}</p>
+            <h2 className="font-display text-xl font-semibold text-espresso-soft">{s.h}</h2>
+            <p className="mt-2 text-espresso">{s.p}</p>
           </div>
         ))}
       </div>

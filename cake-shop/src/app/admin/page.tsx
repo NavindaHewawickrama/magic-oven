@@ -17,7 +17,7 @@ export default function AdminDashboardPage() {
     <DashboardShell title="Overview" subtitle="Admin CMS" nav={adminNav} activeHref="/admin">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className="rounded-2xl border border-line bg-white/70 p-5">
+          <div key={s.label} className="rounded-2xl border border-line bg-white/80 p-5">
             <s.icon className="text-brick" size={18} />
             <p className="mt-3 font-display text-2xl font-semibold">{s.value}</p>
             <p className="text-sm text-espresso-soft">{s.label}</p>
@@ -25,7 +25,7 @@ export default function AdminDashboardPage() {
         ))}
       </div>
 
-      <div className="mt-8 rounded-2xl border border-line bg-white/70 p-6">
+      <div className="mt-8 rounded-2xl border border-line bg-white/80 p-6">
         <p className="font-display text-lg font-semibold">Quick actions</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <a href="/admin/products" className="rounded-full bg-brick px-4 py-2 text-sm font-semibold text-cream">+ Add a product</a>
@@ -34,7 +34,7 @@ export default function AdminDashboardPage() {
         </div>
       </div>
 
-      <div className="mt-6 rounded-2xl border border-dashed border-line bg-cream-dim/60 p-5 text-sm text-espresso-soft">
+      <div className="mt-6 rounded-2xl border border-dashed border-line bg-cream-dim/70 p-5 text-sm text-espresso">
         Analytics (Google Analytics / Search Console / Microsoft Clarity) will be embedded here
         once connected — see Section 12 & 26 of the architecture documentation.
       </div>

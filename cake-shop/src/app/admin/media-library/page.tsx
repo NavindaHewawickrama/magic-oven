@@ -8,10 +8,10 @@ export const metadata = { title: "Media Library — Admin" };
 export default function MediaLibraryPage() {
   return (
     <DashboardShell title="Media Library" subtitle="Admin CMS" nav={adminNav} activeHref="/admin/media-library">
-      <div className="flex items-center justify-between rounded-2xl border border-dashed border-line bg-white/60 p-6">
+      <div className="flex items-center justify-between rounded-2xl border border-dashed border-line bg-white/70 p-6">
         <div>
           <p className="text-sm font-semibold">Upload new images</p>
-          <p className="text-xs text-espresso-soft">PNG, JPG or WebP up to 5MB. Images are auto-compressed on upload.</p>
+          <p className="text-xs text-espresso">PNG, JPG or WebP up to 5MB. Images are auto-compressed on upload.</p>
         </div>
         <button className="inline-flex items-center gap-2 rounded-full bg-brick px-4 py-2 text-sm font-semibold text-cream">
           <Upload size={15} /> Upload
