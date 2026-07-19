@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #FAF3E6;
-  --color-cream-dim: #F2E8D5;
-  --color-espresso: #2E1F16;
-  --color-espresso-soft: #4A362A;
-  --color-brick: #A8442F;
-  --color-brick-soft: #C8664C;
-  --color-sage: #6E7C55;
-  --color-butter: #E4B44C;
-  --color-line: #E1D3B8;
+  --color-cream: #fce1dc;
+  --color-cream-dim: #f19998;
+  --color-espresso: #383937;
+  --color-espresso-soft: #4d3331;
+  --color-brick: #f19998;
+  --color-brick-soft: #bb8280;
+  --color-sage: #9a9c9b;
+  --color-butter: #8c5c58;
+  --color-line: #f19998;
 }
 
 @theme inline {
@@ -33,7 +33,7 @@ html {
 body {
   background: var(--color-cream);
   color: var(--color-espresso);
-  font-family: var(--font-body);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 h1, h2, h3, h4, .font-display {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, .font-display {
   text-transform: uppercase;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--color-brick);
+  color: var(--color-butter);
 }
 
 @media (prefers-reduced-motion: reduce) {

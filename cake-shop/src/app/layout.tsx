@@ -11,7 +11,7 @@ import Footer from "@/components/footer";
 // to preview the design in the meantime.
 
 export const metadata: Metadata = {
-  title: "Sweet Layers Cake Studio — Custom Cakes in Ratnapura",
+  title: "Magic Oven",
   description:
     "Browse our cake catalog or design your own custom cake in 3D. Order directly on WhatsApp — no account needed to order.",
 };

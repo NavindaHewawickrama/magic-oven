@@ -18,6 +18,11 @@ const CakeScene = dynamic(() => import("@/components/cake-scene"), {
   ),
 });
 
+// Wrapper component to forward ref to the dynamically imported CakeScene
+function CakeSceneWithRef({ config, ref }: { config: CakeConfig; ref: React.Ref<HTMLCanvasElement> }) {
+  return <CakeScene config={config} ref={ref} />;
+}
+
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
@@ -93,7 +98,7 @@ export default function BuilderPage() {
         {/* 3D canvas */}
         <div className="order-2 lg:order-1">
           <div className="relative h-[420px] overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream-dim to-white md:h-[560px]">
-            <CakeScene config={config} ref={canvasRef} />
+            <CakeSceneWithRef config={config} ref={canvasRef} />
             <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-espresso/80 px-3 py-1.5 text-xs text-cream">
               <RotateCw size={12} /> Drag to rotate · scroll to zoom
             </div>
