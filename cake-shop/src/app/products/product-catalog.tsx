@@ -39,7 +39,7 @@ export default function ProductCatalog() {
           <label className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">
             Search
           </label>
-          <div className="mt-2 flex items-center gap-2 rounded-full border border-line bg-white/80 px-4 py-2">
+          <div className="mt-2 flex items-center gap-2 rounded-lg border border-line bg-white/80 px-4 py-2">
             <Search size={15} className="text-espresso-soft" />
             <input
               value={query}
@@ -57,7 +57,7 @@ export default function ProductCatalog() {
               <button
                 key={c}
                 onClick={() => { setCategory(c); setPage(1); }}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
                   category === c
                     ? "border-brick bg-brick text-cream"
                     : "border-line text-espresso-soft hover:border-brick"
@@ -91,7 +91,7 @@ export default function ProductCatalog() {
               <button
                 key={r}
                 onClick={() => { setMinRating(r); setPage(1); }}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
                   minRating === r
                     ? "border-brick bg-brick text-cream"
                     : "border-line text-espresso-soft hover:border-brick"
@@ -125,7 +125,7 @@ export default function ProductCatalog() {
               <button
                 key={i}
                 onClick={() => setPage(i + 1)}
-                className={`h-8 w-8 rounded-full text-sm font-medium transition ${
+                className={`h-8 w-8 rounded-lg text-sm font-medium transition ${
                   page === i + 1 ? "bg-brick text-cream" : "border border-line text-espresso-soft"
                 }`}
               >

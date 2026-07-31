@@ -10,20 +10,20 @@ export default function AdminHeroBannerPage() {
         <form className="space-y-4 rounded-2xl border border-line bg-white/80 p-6">
           <div>
             <label className="text-xs font-semibold uppercase text-espresso-soft">Title</label>
-            <input defaultValue="Cakes designed the way you imagine them." className="mt-1 w-full rounded-xl border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
+            <input defaultValue="Cakes designed the way you imagine them." className="mt-1 w-full rounded-lg border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
           </div>
           <div>
             <label className="text-xs font-semibold uppercase text-espresso-soft">Subtitle</label>
-            <textarea rows={3} defaultValue="Browse our catalog, or step into our 3D cake builder to design your own tiers, flavors and colors." className="mt-1 w-full resize-none rounded-xl border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
+            <textarea rows={3} defaultValue="Browse our catalog, or step into our 3D cake builder to design your own tiers, flavors and colors." className="mt-1 w-full resize-none rounded-lg border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="text-xs font-semibold uppercase text-espresso-soft">Button text</label>
-              <input defaultValue="Build your cake" className="mt-1 w-full rounded-xl border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
+              <input defaultValue="Build your cake" className="mt-1 w-full rounded-lg border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
             </div>
             <div>
               <label className="text-xs font-semibold uppercase text-espresso-soft">Button link</label>
-              <input defaultValue="/builder" className="mt-1 w-full rounded-xl border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
+              <input defaultValue="/builder" className="mt-1 w-full rounded-lg border border-line bg-cream-dim px-3 py-2 text-sm outline-none focus:border-brick" />
             </div>
           </div>
           <div>
@@ -32,7 +32,7 @@ export default function AdminHeroBannerPage() {
               Drop image here or click to upload
             </div>
           </div>
-          <button type="submit" className="rounded-full bg-brick px-6 py-2.5 text-sm font-semibold text-cream">
+          <button type="submit" className="rounded-lg border border-brick bg-transparent px-6 py-2.5 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">
             Save & publish
           </button>
         </form>
@@ -43,7 +43,7 @@ export default function AdminHeroBannerPage() {
             <p className="eyebrow">Handmade in Ratnapura</p>
             <h2 className="mt-2 font-display text-2xl font-semibold text-espresso-soft">Cakes designed the way you imagine them.</h2>
             <p className="mt-2 text-sm text-espresso">Browse our catalog, or step into our 3D cake builder to design your own tiers, flavors and colors.</p>
-            <button className="mt-4 rounded-full bg-brick px-4 py-2 text-xs font-semibold text-cream">Build your cake</button>
+            <button className="mt-4 rounded-lg border border-brick bg-transparent px-4 py-2 text-xs font-semibold text-brick transition hover:bg-brick hover:text-cream">Build your cake</button>
           </div>
         </div>
       </div>

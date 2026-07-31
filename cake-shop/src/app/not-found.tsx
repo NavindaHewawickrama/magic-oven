@@ -6,9 +6,9 @@ export default function NotFound() {
       <span className="text-6xl">🎂💥</span>
       <h1 className="mt-4 font-display text-4xl font-semibold">This slice is missing</h1>
       <p className="mt-3 text-espresso-soft">
-        The page you're looking for isn't on the menu. Let's get you back to something sweeter.
+        The page you&apos;re looking for isn&apos;t on the menu. Let&apos;s get you back to something sweeter.
       </p>
-      <Link href="/" className="mt-6 rounded-full bg-brick px-6 py-3 text-sm font-semibold text-cream">
+      <Link href="/" className="mt-6 rounded-lg border border-brick bg-transparent px-6 py-3 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">
         Back to home
       </Link>
     </div>

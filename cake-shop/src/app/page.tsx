@@ -1,10 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { products, notices, generalFeedback, businessSettings, whatsappOrderLink } from "@/lib/mock-data";
+import { ArrowRight } from "lucide-react";
+import { products, notices, generalFeedback } from "@/lib/mock-data";
 import ProductCard from "@/components/product-card";
-import StarRating from "@/components/star-rating";
 import FeedbackForm from "@/components/feedback-form";
 import ContactBlock from "@/components/contact-block";
+
+const categories = [
+  { emoji: "🍰", label: "Slice of cake" },
+  { emoji: "🧁", label: "Cupcake" },
+  { emoji: "🌀", label: "Cake Roll" },
+  { emoji: "🥞", label: "Pan Cake" },
+  { emoji: "🎂", label: "Cake" },
+];
 
 export default function Home() {
   const featured = products.filter((p) => p.featured);
@@ -14,77 +21,145 @@ export default function Home() {
     <div>
       {/* Notices */}
       {notices.filter((n) => n.active).map((n) => (
-        <div key={n.id} className="bg-brick px-5 py-2.5 text-center text-sm font-medium text-cream">
+        <div key={n.id} className="bg-coral px-5 py-2.5 text-center text-sm font-medium text-cream">
           {n.message}
         </div>
       ))}
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-line">
+      <section className="relative overflow-hidden bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
+          <div className="relative flex h-72 items-center justify-center text-[9rem] md:h-96">
+            🎂
+          </div>
           <div>
-            <p className="eyebrow flex items-center gap-2">
-              <Sparkles size={14} /> Handmade in Ratnapura
-            </p>
-            <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.1] text-espresso-soft md:text-6xl">
-              Cakes designed the way <span className="italic text-brick">you</span> imagine them.
+            <h1 className="font-display text-4xl font-bold leading-[1.1] text-brick md:text-6xl">
+              Do u like cake?
             </h1>
             <p className="mt-5 max-w-md text-espresso">
-              Browse our catalog, or step into our 3D cake builder to design your own tiers,
-              flavors and colors — then send it straight to us on WhatsApp.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/builder"
-                className="inline-flex items-center gap-2 rounded-full bg-brick px-6 py-3 text-sm font-semibold text-cream transition hover:brightness-110"
-              >
-                Build your cake <ArrowRight size={16} />
-              </Link>
+            <div className="mt-8">
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-6 py-3 text-sm font-semibold text-espresso transition hover:border-brick hover:text-brick"
+                className="inline-flex items-center gap-2 rounded-lg border border-coral bg-transparent px-8 py-3 text-sm font-semibold text-coral transition hover:bg-coral hover:text-cream"
               >
-                Browse the catalog
+                Buy Now
               </Link>
-            </div>
-          </div>
-          <div className="relative flex h-72 items-center justify-center rounded-3xl bg-cream-dim text-[9rem] md:h-96">
-            🎂
-            <div className="absolute -left-4 top-6 rounded-2xl bg-white px-4 py-2 shadow-md">
-              <StarRating rating={4.9} count={214} />
-            </div>
-            <div className="absolute -right-2 bottom-8 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-espresso-soft shadow-md">
-              🍫 Midnight Fudge<br />
-              <span className="font-normal text-espresso-soft">just ordered</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* New arrivals / featured */}
-      <section className="mx-auto max-w-6xl px-5 py-16">
-        <div className="flex items-end justify-between">
-          <div>
-            <p className="eyebrow">New & featured</p>
-            <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">This season's arrivals</h2>
+      {/* Category strip */}
+      <section className="bg-cream-dim/70 py-8">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-around gap-8 px-5">
+          {categories.map((c) => (
+            <div key={c.label} className="flex flex-col items-center gap-2">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cream text-3xl">
+                {c.emoji}
+              </div>
+              <p className="text-xs font-medium text-espresso-soft">{c.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* What's New */}
+      <section className="bg-pink-section py-16">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,260px)_1fr] md:items-start">
+            <div>
+              <h2 className="font-display text-4xl font-bold leading-tight text-cream">
+                What&apos;s<br />New
+              </h2>
+              <div className="divider-flourish mt-4 w-24" />
+              <p className="mt-5 text-sm text-cream/90">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+            <div className="scrollbar-thin flex snap-x gap-6 overflow-x-auto pb-4">
+              {featured.map((p) => (
+                <div key={p.id} className="snap-start">
+                  <ProductCard product={p} />
+                </div>
+              ))}
+            </div>
           </div>
-          <Link href="/products" className="hidden text-sm font-semibold text-brick md:block">
-            View all cakes →
-          </Link>
         </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => <ProductCard key={p.id} product={p} />)}
+      </section>
+
+      {/* Why Choose Our Cake */}
+      <section className="bg-pink-deep py-16">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center">
+            <div className="flex h-72 items-center justify-center overflow-hidden rounded-3xl bg-cream text-8xl md:h-80">
+              🍋🍰
+            </div>
+            <div>
+              <h2 className="font-display text-3xl font-bold text-cream md:text-4xl">
+                Why Choose Our Cake?
+              </h2>
+              <p className="mt-4 max-w-md text-sm text-cream/90">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <ol className="mt-6 space-y-4">
+                {[1, 2, 3].map((n) => (
+                  <li key={n} className="flex items-start gap-3">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-coral text-xs font-bold text-cream">
+                      {n}
+                    </span>
+                    <span className="text-sm text-cream/90">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-cream-dim/70 py-16">
+        <div className="mx-auto max-w-6xl px-5">
+          <p className="eyebrow">Testimonials</p>
+          <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">What our customers say</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {generalFeedback.map((f) => (
+              <div key={f.id} className="rounded-2xl bg-cream p-6 shadow-sm">
+                <p className="text-sm text-espresso">&quot;{f.comment}&quot;</p>
+                <p className="mt-4 text-sm font-semibold text-espresso-soft">— {f.author}</p>
+                {f.reply && (
+                  <p className="mt-3 rounded-xl bg-mint px-3 py-2 text-xs text-espresso">
+                    <span className="font-semibold text-brick">Sweet Cake: </span>{f.reply}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote banner */}
+      <section className="bg-gradient-to-b from-pink-deep to-cream py-16 text-center">
+        <p className="font-display text-xl italic text-espresso-soft md:text-2xl">
+          Crafted with Love, Tasted with Joy
+        </p>
+        <div className="divider-flourish mx-auto mt-4 w-40" />
       </section>
 
       {/* Popular carousel */}
-      <section className="border-y border-line bg-cream-dim/70 py-16">
+      <section className="bg-cream py-16">
         <div className="mx-auto max-w-6xl px-5">
           <p className="eyebrow">Customer favorites</p>
           <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">Most popular this month</h2>
-          <div className="mt-8 flex snap-x gap-5 overflow-x-auto pb-4">
+          <div className="scrollbar-thin mt-8 flex snap-x gap-6 overflow-x-auto pb-4">
             {popular.map((p) => (
-              <div key={p.id} className="w-72 snap-start">
+              <div key={p.id} className="snap-start">
                 <ProductCard product={p} />
               </div>
             ))}
@@ -105,52 +180,10 @@ export default function Home() {
           </p>
           <Link
             href="/builder"
-            className="inline-flex items-center gap-2 rounded-full bg-peach px-6 py-3 text-sm font-semibold text-espresso transition hover:brightness-105"
+            className="inline-flex items-center gap-2 rounded-lg border border-coral bg-transparent px-6 py-3 text-sm font-semibold text-coral transition hover:bg-coral hover:text-cream"
           >
             Open the Cake Builder <ArrowRight size={16} />
           </Link>
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="mx-auto max-w-6xl px-5 py-16" id="about">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-cream-dim text-7xl">
-            👩‍🍳
-          </div>
-          <div>
-            <p className="eyebrow">About us</p>
-            <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">
-              A neighborhood bakery, now online.
-            </h2>
-            <p className="mt-4 text-espresso">
-              Sweet Layers started as a home kitchen in Ratnapura, baking birthday cakes for
-              neighbors and word-of-mouth orders. Today we still hand-finish every cake — we've
-              simply given you a better way to tell us what you're dreaming of, and an easier way
-              to reach us.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="border-y border-line bg-cream-dim/70 py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <p className="eyebrow">Testimonials</p>
-          <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">What our customers say</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {generalFeedback.map((f) => (
-              <div key={f.id} className="rounded-2xl border border-line bg-white/80 p-6">
-                <p className="text-sm text-espresso">"{f.comment}"</p>
-                <p className="mt-4 text-sm font-semibold text-espresso-soft">— {f.author}</p>
-                {f.reply && (
-                  <p className="mt-3 rounded-xl bg-cream-dim px-3 py-2 text-xs text-espresso">
-                    <span className="font-semibold text-brick">Sweet Layers: </span>{f.reply}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -159,7 +192,7 @@ export default function Home() {
         <p className="eyebrow text-center">Tell us what you think</p>
         <h2 className="mt-1 text-center font-display text-3xl font-semibold text-espresso-soft">Leave general feedback</h2>
         <p className="mt-2 text-center text-sm text-espresso">
-          Feedback about the shop overall (not a specific cake) goes here. You'll need to be
+          Feedback about the shop overall (not a specific cake) goes here. You&apos;ll need to be
           logged in — this keeps reviews genuine.
         </p>
         <div className="mt-8">
@@ -170,7 +203,7 @@ export default function Home() {
       {/* Contact */}
       <section className="mx-auto max-w-6xl px-5 pb-20" id="contact">
         <p className="eyebrow">Get in touch</p>
-        <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">Contact Sweet Layers</h2>
+        <h2 className="mt-1 font-display text-3xl font-semibold text-espresso-soft">Contact Sweet Cake</h2>
         <div className="mt-8">
           <ContactBlock />
         </div>

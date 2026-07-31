@@ -9,7 +9,7 @@ function Field({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <label className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">{label}</label>
-        <input defaultValue={value} className="mt-1.5 w-full rounded-xl border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
+        <input defaultValue={value} className="mt-1.5 w-full rounded-lg border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
     </div>
   );
 }
@@ -22,7 +22,7 @@ export default function SettingsPage() {
           <p className="font-display text-lg font-semibold text-espresso-soft">Site logo</p>
           <div className="mt-4 flex items-center gap-5">
             <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-cream-dim text-4xl">🍰</div>
-            <button className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-espresso hover:border-peach-dark hover:text-peach-dark">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-semibold text-espresso hover:border-peach-dark hover:text-peach-dark">
               <Upload size={15} /> Replace logo
             </button>
           </div>
@@ -41,7 +41,7 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        <button className="rounded-full bg-brick px-6 py-2.5 text-sm font-semibold text-cream">Save settings</button>
+        <button className="rounded-lg border border-brick bg-transparent px-6 py-2.5 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">Save settings</button>
       </div>
     </DashboardShell>
   );

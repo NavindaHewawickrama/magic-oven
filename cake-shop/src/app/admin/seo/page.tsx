@@ -8,9 +8,9 @@ function Field({ label, placeholder, textarea }: { label: string; placeholder: s
     <div>
       <label className="text-xs font-semibold uppercase tracking-wide text-espresso-soft">{label}</label>
       {textarea ? (
-        <textarea rows={3} placeholder={placeholder} className="mt-1.5 w-full resize-none rounded-xl border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
+        <textarea rows={3} placeholder={placeholder} className="mt-1.5 w-full resize-none rounded-lg border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
       ) : (
-        <input placeholder={placeholder} className="mt-1.5 w-full rounded-xl border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
+        <input placeholder={placeholder} className="mt-1.5 w-full rounded-lg border border-line bg-cream-dim px-4 py-2.5 text-sm outline-none focus:border-brick" />
       )}
     </div>
   );
@@ -45,7 +45,7 @@ export default function SeoPage() {
           </div>
         </div>
 
-        <button className="rounded-full bg-brick px-6 py-2.5 text-sm font-semibold text-cream">Save SEO settings</button>
+        <button className="rounded-lg border border-brick bg-transparent px-6 py-2.5 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">Save SEO settings</button>
       </div>
     </DashboardShell>
   );

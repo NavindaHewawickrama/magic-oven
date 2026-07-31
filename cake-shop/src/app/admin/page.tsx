@@ -28,9 +28,9 @@ export default function AdminDashboardPage() {
       <div className="mt-8 rounded-2xl border border-line bg-white/80 p-6">
         <p className="font-display text-lg font-semibold">Quick actions</p>
         <div className="mt-4 flex flex-wrap gap-3">
-          <a href="/admin/products" className="rounded-full bg-brick px-4 py-2 text-sm font-semibold text-cream">+ Add a product</a>
-          <a href="/admin/notices" className="rounded-full border border-line px-4 py-2 text-sm font-semibold text-espresso-soft">Post a notice</a>
-          <a href="/admin/feedback" className="rounded-full border border-line px-4 py-2 text-sm font-semibold text-espresso-soft">Review feedback</a>
+          <a href="/admin/products" className="rounded-lg border border-brick bg-transparent px-4 py-2 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">+ Add a product</a>
+          <a href="/admin/notices" className="rounded-lg border border-line px-4 py-2 text-sm font-semibold text-espresso-soft">Post a notice</a>
+          <a href="/admin/feedback" className="rounded-lg border border-line px-4 py-2 text-sm font-semibold text-espresso-soft">Review feedback</a>
         </div>
       </div>
 

@@ -73,7 +73,7 @@ export default async function ProductDetailPage({
             {product.inStock ? (
               <WhatsAppButton href={whatsappOrderLink(message)} full />
             ) : (
-              <button disabled className="w-full rounded-full bg-line py-2.5 text-sm font-semibold text-espresso-soft">
+              <button disabled className="w-full rounded-lg bg-line py-2.5 text-sm font-semibold text-espresso-soft">
                 Sold out
               </button>
             )}

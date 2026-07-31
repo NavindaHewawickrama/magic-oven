@@ -13,7 +13,7 @@ export default function MediaLibraryPage() {
           <p className="text-sm font-semibold">Upload new images</p>
           <p className="text-xs text-espresso">PNG, JPG or WebP up to 5MB. Images are auto-compressed on upload.</p>
         </div>
-        <button className="inline-flex items-center gap-2 rounded-full bg-brick px-4 py-2 text-sm font-semibold text-cream">
+        <button className="inline-flex items-center gap-2 rounded-lg border border-brick bg-transparent px-4 py-2 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">
           <Upload size={15} /> Upload
         </button>
       </div>

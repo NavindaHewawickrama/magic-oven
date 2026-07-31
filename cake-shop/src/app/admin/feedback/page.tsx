@@ -19,7 +19,7 @@ export default function AdminFeedbackPage() {
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`rounded-full px-4 py-2 text-sm font-medium ${tab === t ? "bg-brick text-cream" : "border border-line text-espresso-soft"}`}
+            className={`rounded-lg px-4 py-2 text-sm font-medium ${tab === t ? "bg-brick text-cream" : "border border-line text-espresso-soft"}`}
           >
             {t === "general" ? "General Feedback" : "Product Reviews"}
           </button>
@@ -38,9 +38,9 @@ export default function AdminFeedbackPage() {
               </div>
               <p className="mt-2 text-sm text-espresso">{g.comment}</p>
               <div className="mt-3 flex flex-wrap items-center gap-2">
-                <button onClick={() => setGeneral((arr) => arr.map((x) => x.id === g.id ? { ...x, approved: true } : x))} className="inline-flex items-center gap-1 rounded-full bg-sage/15 px-3 py-1.5 text-xs font-medium text-sage"><Check size={12} /> Approve</button>
-                <button onClick={() => setGeneral((arr) => arr.filter((x) => x.id !== g.id))} className="inline-flex items-center gap-1 rounded-full bg-brick/10 px-3 py-1.5 text-xs font-medium text-brick"><X size={12} /> Reject</button>
-                <button className="inline-flex items-center gap-1 rounded-full border border-line px-3 py-1.5 text-xs font-medium text-espresso-soft"><Reply size={12} /> Reply</button>
+                <button onClick={() => setGeneral((arr) => arr.map((x) => x.id === g.id ? { ...x, approved: true } : x))} className="inline-flex items-center gap-1 rounded-lg bg-sage/15 px-3 py-1.5 text-xs font-medium text-sage"><Check size={12} /> Approve</button>
+                <button onClick={() => setGeneral((arr) => arr.filter((x) => x.id !== g.id))} className="inline-flex items-center gap-1 rounded-lg bg-brick/10 px-3 py-1.5 text-xs font-medium text-brick"><X size={12} /> Reject</button>
+                <button className="inline-flex items-center gap-1 rounded-lg border border-line px-3 py-1.5 text-xs font-medium text-espresso-soft"><Reply size={12} /> Reply</button>
               </div>
             </div>
           ))}
@@ -58,8 +58,8 @@ export default function AdminFeedbackPage() {
               </div>
               <p className="mt-2 text-sm text-espresso">{r.comment}</p>
               <div className="mt-3 flex gap-2">
-                <button onClick={() => setReviews((arr) => arr.map((x) => x.id === r.id ? { ...x, approved: true } : x))} className="inline-flex items-center gap-1 rounded-full bg-sage/15 px-3 py-1.5 text-xs font-medium text-sage"><Check size={12} /> Approve</button>
-                <button onClick={() => setReviews((arr) => arr.filter((x) => x.id !== r.id))} className="inline-flex items-center gap-1 rounded-full bg-brick/10 px-3 py-1.5 text-xs font-medium text-brick"><X size={12} /> Reject</button>
+                <button onClick={() => setReviews((arr) => arr.map((x) => x.id === r.id ? { ...x, approved: true } : x))} className="inline-flex items-center gap-1 rounded-lg bg-sage/15 px-3 py-1.5 text-xs font-medium text-sage"><Check size={12} /> Approve</button>
+                <button onClick={() => setReviews((arr) => arr.filter((x) => x.id !== r.id))} className="inline-flex items-center gap-1 rounded-lg bg-brick/10 px-3 py-1.5 text-xs font-medium text-brick"><X size={12} /> Reject</button>
               </div>
             </div>
           ))}
