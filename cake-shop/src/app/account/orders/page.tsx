@@ -12,7 +12,7 @@ const nav = [
 export default function OrdersPage() {
   return (
     <DashboardShell title="My Orders" subtitle="Customer dashboard" nav={nav} activeHref="/account/orders">
-      <div className="rounded-2xl border border-dashed border-line bg-white/60 p-10 text-center text-sm text-espresso-soft">
+      <div className="rounded-2xl border border-dashed border-line bg-white/70 p-10 text-center text-sm text-espresso">
         📦 Order history will appear here once online payments and order tracking launch. For now,
         all orders are tracked over WhatsApp.
       </div>

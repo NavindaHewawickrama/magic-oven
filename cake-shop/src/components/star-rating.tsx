@@ -16,7 +16,7 @@ export default function StarRating({
           <Star
             key={i}
             size={size}
-            className={i < Math.round(rating) ? "fill-butter text-butter" : "text-line"}
+            className={i < Math.round(rating) ? "fill-peach text-peach" : "text-line"}
           />
         ))}
       </div>

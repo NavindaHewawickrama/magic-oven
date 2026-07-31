@@ -15,16 +15,16 @@ export default function MyFeedbackPage() {
     <DashboardShell title="My Feedback" subtitle="Customer dashboard" nav={nav} activeHref="/account/feedback">
       <div className="space-y-4">
         {generalFeedback.map((f) => (
-          <div key={f.id} className="rounded-2xl border border-line bg-white/70 p-5">
+          <div key={f.id} className="rounded-2xl border border-line bg-white/80 p-5">
             <div className="flex items-center justify-between">
               <p className="text-sm font-semibold">{f.date}</p>
               <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${f.approved ? "bg-sage/15 text-sage" : "bg-butter/20 text-espresso-soft"}`}>
                 {f.approved ? "Approved" : "Pending review"}
               </span>
             </div>
-            <p className="mt-2 text-sm text-espresso-soft">{f.comment}</p>
+            <p className="mt-2 text-sm text-espresso">{f.comment}</p>
             {f.reply && (
-              <p className="mt-3 rounded-xl bg-cream-dim px-3 py-2 text-xs text-espresso-soft">
+              <p className="mt-3 rounded-xl bg-cream-dim px-3 py-2 text-xs text-espresso">
                 <span className="font-semibold text-brick">Shop reply: </span>{f.reply}
               </p>
             )}

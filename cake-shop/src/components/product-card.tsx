@@ -6,33 +6,38 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group flex shrink-0 flex-col overflow-hidden rounded-2xl border border-line bg-white/60 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-espresso/5"
+      className="group flex w-64 shrink-0 flex-col overflow-hidden rounded-2xl bg-cream shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-brick/15"
     >
-      <div className="relative flex h-44 items-center justify-center bg-cream-dim text-6xl">
+      <div className="px-5 pt-5">
+        <h3 className="font-display text-lg font-semibold leading-snug text-brick">
+          {product.name}
+        </h3>
+        <div className="mt-1.5 h-px w-full bg-brick-soft/40" />
+      </div>
+
+      <div className="relative mx-5 mt-4 flex h-32 items-center justify-center rounded-full bg-cream-dim text-5xl">
         {product.thumbnail}
         {!product.inStock && (
-          <span className="absolute right-2 top-2 rounded-full bg-espresso/80 px-2 py-1 text-[10px] font-semibold text-cream">
+          <span className="absolute right-1 top-1 rounded-full bg-espresso-soft px-2 py-1 text-[10px] font-semibold text-cream">
             Sold out
           </span>
         )}
         {product.popular && product.inStock && (
-          <span className="absolute right-2 top-2 rounded-full bg-brick px-2 py-1 text-[10px] font-semibold text-cream">
+          <span className="absolute right-1 top-1 rounded-full bg-peach px-2 py-1 text-[10px] font-semibold text-espresso">
             Popular
           </span>
         )}
+        <span className="absolute -bottom-3 right-2 rounded-full bg-coral px-3 py-1 text-xs font-semibold text-cream shadow-md">
+          {product.price > 0 ? `$${(product.price / 1000).toFixed(2)}` : "Custom"}
+        </span>
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <p className="eyebrow">{product.category}</p>
-        <h3 className="font-display text-lg font-semibold leading-snug text-espresso group-hover:text-brick">
-          {product.name}
-        </h3>
-        <p className="line-clamp-2 text-sm text-espresso-soft">{product.description}</p>
-        <div className="mt-auto flex items-center justify-between pt-2">
+
+      <div className="mt-5 flex flex-1 flex-col gap-2 bg-mint px-5 py-4">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-semibold uppercase tracking-widest text-espresso-soft">{product.category}</p>
           <StarRating rating={product.rating} count={product.reviewCount} />
-          <span className="font-display text-base font-semibold text-espresso">
-            {product.price > 0 ? `Rs. ${product.price.toLocaleString()}` : "Custom"}
-          </span>
         </div>
+        <p className="line-clamp-3 text-sm text-espresso">{product.description}</p>
       </div>
     </Link>
   );

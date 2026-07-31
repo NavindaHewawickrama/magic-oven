@@ -1,15 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #FAF3E6;
-  --color-cream-dim: #F2E8D5;
-  --color-espresso: #2E1F16;
-  --color-espresso-soft: #4A362A;
-  --color-brick: #A8442F;
-  --color-brick-soft: #C8664C;
-  --color-sage: #6E7C55;
-  --color-butter: #E4B44C;
-  --color-line: #E1D3B8;
+  --color-cream: #fdf1e0;
+  --color-cream-dim: #fbdfe6;
+  --color-espresso: #6b4038;
+  --color-espresso-soft: #4a2b25;
+  --color-brick: #ef5f80;
+  --color-brick-soft: #f2899e;
+  --color-sage: #cdeee0;
+  --color-butter: #f5c9a8;
+  --color-line: #f3c9d1;
+  --color-peach: #f5c9a8;
+  --color-peach-dark: #e8935f;
+  --color-coral: #f4795f;
+  --color-pink-section: #f6a3b4;
+  --color-pink-deep: #f28ba0;
+  --color-mint: #cdeee0;
 }
 
 @theme inline {
@@ -22,6 +28,12 @@
   --color-sage: var(--color-sage);
   --color-butter: var(--color-butter);
   --color-line: var(--color-line);
+  --color-peach: var(--color-peach);
+  --color-peach-dark: var(--color-peach-dark);
+  --color-coral: var(--color-coral);
+  --color-pink-section: var(--color-pink-section);
+  --color-pink-deep: var(--color-pink-deep);
+  --color-mint: var(--color-mint);
   --font-display: var(--font-fraunces, Georgia, "Times New Roman", serif);
   --font-body: var(--font-worksans, ui-sans-serif, system-ui, sans-serif);
 }
@@ -33,7 +45,7 @@ html {
 body {
   background: var(--color-cream);
   color: var(--color-espresso);
-  font-family: var(--font-body);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 h1, h2, h3, h4, .font-display {
@@ -45,7 +57,7 @@ h1, h2, h3, h4, .font-display {
   text-transform: uppercase;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--color-brick);
+  color: var(--color-peach-dark);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -62,4 +74,69 @@ h1, h2, h3, h4, .font-display {
   background-image: radial-gradient(circle at 10px 0, transparent 9px, var(--color-cream-dim) 10px);
   background-size: 20px 10px;
   background-repeat: repeat-x;
+}
+
+.divider-flourish {
+  position: relative;
+  height: 1px;
+  background: var(--color-brick-soft);
+  opacity: 0.4;
+}
+
+.divider-flourish::after {
+  content: "🎀";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  background: transparent;
+}
+
+/* Pretty scrollbars */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brick) var(--color-cream-dim);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-brick), var(--color-coral));
+  border-radius: 999px;
+  border: 2px solid var(--color-cream-dim);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coral);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-cream-dim);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brick) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--color-brick), var(--color-coral));
+  border-radius: 999px;
+  border: none;
 }
