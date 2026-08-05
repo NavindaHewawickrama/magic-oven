@@ -1,8 +1,10 @@
+// ============================================================================
+// server.ts — Supabase client for Server Components / Actions / Route Handlers
+// ============================================================================
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import type { Database } from "./database.types";
 
-// Use this in Server Components, Server Actions, and Route Handlers.
 export async function createClient() {
   const cookieStore = await cookies();
 
@@ -20,8 +22,8 @@ export async function createClient() {
               cookieStore.set(name, value, options)
             );
           } catch {
-            // setAll called from a Server Component - safe to ignore
-            // if you have middleware refreshing sessions.
+            // Server Components can't set cookies directly — middleware.ts
+            // handles refreshing the session, so it's safe to ignore here.
           }
         },
       },
