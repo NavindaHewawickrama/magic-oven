@@ -72,8 +72,24 @@ function dripBlobPath(cx: number, topY: number, length: number, width: number) {
 
 type Tier = { halfWidth: number; topY: number; height: number };
 
+/** Turns a hex color into a safe, stable SVG id fragment. */
+function colorId(hex: string) {
+  return hex.replace("#", "");
+}
+
+function BodyGradient({ color }: { color: string }) {
+  return (
+    <linearGradient id={`body-grad-${colorId(color)}`} x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor={shade(color, -0.14)} />
+      <stop offset="42%" stopColor={color} />
+      <stop offset="62%" stopColor={shade(color, 0.09)} />
+      <stop offset="100%" stopColor={shade(color, -0.08)} />
+    </linearGradient>
+  );
+}
+
 function TierShape({
-  shape, cx, topY, halfWidth, height, color,
+  shape, cx, topY, halfWidth, height, color, isTopMost,
 }: {
   shape: CakeConfig["shape"];
   cx: number;
@@ -81,21 +97,45 @@ function TierShape({
   halfWidth: number;
   height: number;
   color: string;
+  isTopMost: boolean;
 }) {
+  const fill = `url(#body-grad-${colorId(color)})`;
+  const edge = shade(color, -0.2);
+
   if (shape === "Round") {
     const ry = halfWidth * 0.2;
     return (
       <>
-        <ellipse cx={cx} cy={topY + height} rx={halfWidth} ry={ry} fill={shade(color, -0.1)} />
-        <rect x={cx - halfWidth} y={topY} width={halfWidth * 2} height={height} fill={color} />
-        <ellipse cx={cx} cy={topY} rx={halfWidth} ry={ry} fill={shade(color, 0.06)} />
+        <ellipse cx={cx} cy={topY + height} rx={halfWidth} ry={ry} fill={shade(color, -0.12)} />
+        <rect x={cx - halfWidth} y={topY} width={halfWidth * 2} height={height} fill={fill} />
+        {!isTopMost && (
+          <ellipse cx={cx} cy={topY} rx={halfWidth} ry={ry} fill={shade(color, -0.05)} opacity={0.5} />
+        )}
+        <ellipse cx={cx} cy={topY} rx={halfWidth} ry={ry} fill={shade(color, 0.09)} />
+        <ellipse cx={cx} cy={topY} rx={halfWidth} ry={ry} fill="none" stroke={edge} strokeWidth={0.6} opacity={0.35} />
       </>
     );
   }
   if (shape === "Square") {
-    return <rect x={cx - halfWidth} y={topY} width={halfWidth * 2} height={height} rx={10} fill={color} />;
+    return (
+      <>
+        <rect x={cx - halfWidth} y={topY} width={halfWidth * 2} height={height} rx={12} fill={fill} stroke={edge} strokeWidth={0.6} strokeOpacity={0.25} />
+        <rect x={cx - halfWidth + 3} y={topY + 2} width={halfWidth * 2 - 6} height={Math.min(8, height * 0.3)} rx={8} fill={shade(color, 0.14)} opacity={0.45} />
+        {!isTopMost && (
+          <rect x={cx - halfWidth} y={topY + height - 4} width={halfWidth * 2} height={4} rx={2} fill={shade(color, -0.1)} opacity={0.4} />
+        )}
+      </>
+    );
   }
-  return <path d={heartTierPath(cx, topY, halfWidth, height)} fill={color} />;
+  return (
+    <path
+      d={heartTierPath(cx, topY, halfWidth, height)}
+      fill={fill}
+      stroke={edge}
+      strokeWidth={0.7}
+      strokeOpacity={0.3}
+    />
+  );
 }
 
 function CakeBody({ config }: { config: CakeConfig }) {
@@ -115,24 +155,62 @@ function CakeBody({ config }: { config: CakeConfig }) {
 
   return (
     <g>
+      <defs>
+        <BodyGradient color={color} />
+        <BodyGradient color={icingColor} />
+        <radialGradient id="board-sheen" cx="50%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#FFFDF5" />
+          <stop offset="100%" stopColor="#EFE3CB" />
+        </radialGradient>
+        <filter id="cake-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="3.5" />
+        </filter>
+      </defs>
+
       {/* soft contact shadow */}
-      <ellipse cx={CENTER_X} cy={boardY + 12} rx={boardHalfWidth + 8} ry={10} fill="#4a2b25" opacity={0.14} />
+      <ellipse cx={CENTER_X} cy={boardY + 10} rx={boardHalfWidth + 6} ry={9} fill="#4a2b25" opacity={0.16} filter="url(#cake-soft-shadow)" />
       {/* cake board */}
       <ellipse cx={CENTER_X} cy={boardY} rx={boardHalfWidth} ry={11} fill="#EFE3CB" stroke="#E1D3B8" strokeWidth={1} />
-      <ellipse cx={CENTER_X} cy={boardY - 3} rx={boardHalfWidth} ry={11} fill="#F7EFDA" />
+      <ellipse cx={CENTER_X} cy={boardY - 3} rx={boardHalfWidth} ry={11} fill="url(#board-sheen)" />
 
       {tiers.map((t, i) => (
-        <TierShape key={i} shape={shape} cx={CENTER_X} topY={t.topY} halfWidth={t.halfWidth} height={t.height} color={color} />
+        <TierShape
+          key={i}
+          shape={shape}
+          cx={CENTER_X}
+          topY={t.topY}
+          halfWidth={t.halfWidth}
+          height={t.height}
+          color={color}
+          isTopMost={i === tiers.length - 1}
+        />
       ))}
 
       {/* icing cap + drips on the top tier only */}
       {top && (
         <>
-          <TierShape shape={shape} cx={CENTER_X} topY={top.topY - ICING_HEIGHT} halfWidth={top.halfWidth} height={ICING_HEIGHT} color={icingColor} />
+          <TierShape
+            shape={shape}
+            cx={CENTER_X}
+            topY={top.topY - ICING_HEIGHT}
+            halfWidth={top.halfWidth}
+            height={ICING_HEIGHT}
+            color={icingColor}
+            isTopMost
+          />
           {Array.from({ length: 9 }).map((_, i) => {
             const x = CENTER_X - top.halfWidth * 0.85 + (i / 8) * top.halfWidth * 1.7;
             const len = 10 + ((i * 37) % 15);
-            return <path key={i} d={dripBlobPath(x, top.topY, len, 6.5)} fill={icingColor} />;
+            return (
+              <path
+                key={i}
+                d={dripBlobPath(x, top.topY, len, 6.5)}
+                fill={icingColor}
+                stroke={shade(icingColor, -0.08)}
+                strokeWidth={0.4}
+                strokeOpacity={0.4}
+              />
+            );
           })}
         </>
       )}
