@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Pencil, Trash2, Eye, EyeOff, X } from "lucide-react";
+import { Add01Icon, Edit01Icon, Delete01Icon, EyeIcon, CIcon } from "hugeicons-react";
 import DashboardShell from "@/components/dashboard-shell";
 import { adminNav } from "@/lib/admin-nav";
 import { products as initialProducts, Product } from "@/lib/mock-data";
@@ -25,7 +25,7 @@ export default function AdminProductsPage() {
       <div className="mb-5 flex items-center justify-between">
         <p className="text-sm text-espresso-soft">{products.length} products</p>
         <button onClick={openNew} className="inline-flex items-center gap-2 rounded-lg border border-brick bg-transparent px-4 py-2 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">
-          <Plus size={16} /> Add product
+          <Add01Icon size={16} /> Add product
         </button>
       </div>
 
@@ -58,14 +58,14 @@ export default function AdminProductsPage() {
                       p.inStock ? "bg-sage/15 text-sage" : "bg-brick/10 text-brick"
                     }`}
                   >
-                    {p.inStock ? <Eye size={12} /> : <EyeOff size={12} />}
+                    {p.inStock ? <EyeIcon size={12} /> : <EyeIcon size={12} />}
                     {p.inStock ? "Visible" : "Hidden"}
                   </button>
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex justify-end gap-2">
-                    <button onClick={() => openEdit(p)} className="rounded-lg border border-line p-1.5 hover:border-brick"><Pencil size={14} /></button>
-                    <button onClick={() => remove(p.id)} className="rounded-lg border border-line p-1.5 hover:border-brick"><Trash2 size={14} /></button>
+                    <button onClick={() => openEdit(p)} className="rounded-lg border border-line p-1.5 hover:border-brick"><Edit01Icon size={14} /></button>
+                    <button onClick={() => remove(p.id)} className="rounded-lg border border-line p-1.5 hover:border-brick"><Delete01Icon size={14} /></button>
                   </div>
                 </td>
               </tr>
@@ -79,7 +79,7 @@ export default function AdminProductsPage() {
           <div className="w-full max-w-lg rounded-3xl bg-cream-dim p-6">
             <div className="flex items-center justify-between">
               <p className="font-display text-xl font-semibold">{editing ? "Edit product" : "New product"}</p>
-              <button onClick={() => setShowForm(false)}><X size={18} /></button>
+              <button onClick={() => setShowForm(false)}><CIcon size={18} /></button>
             </div>
             <form
               className="mt-5 space-y-4"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Camera, ArrowRight, RefreshCw, Sparkles } from "lucide-react";
+import { Camera01Icon, ArrowRight01Icon, Refresh01Icon, SparklesIcon } from "hugeicons-react";
 import {
   CakeConfig, defaultConfig, shapes, flavors, creams, colorPalette, stickerCatalog, PlacedSticker, StickerKind,
 } from "@/lib/builder-types";
@@ -180,7 +180,7 @@ export default function BuilderPage() {
               />
             </div>
             <div className="pointer-events-none absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-cream/90 px-3 py-1.5 text-xs font-medium text-espresso-soft shadow-sm">
-              <Sparkles size={12} className="text-brick" /> Drag decorations to arrange
+              <SparklesIcon size={12} className="text-brick" /> Drag decorations to arrange
             </div>
           </div>
 
@@ -189,13 +189,13 @@ export default function BuilderPage() {
               onClick={takeScreenshot}
               className="inline-flex items-center gap-2 rounded-lg border border-brick bg-transparent px-5 py-2.5 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream"
             >
-              <Camera size={16} /> Take screenshot
+                <Camera01Icon size={16} /> Take screenshot
             </button>
             <button
               onClick={reset}
               className="inline-flex items-center gap-2 rounded-lg border border-line bg-transparent px-4 py-2.5 text-sm font-semibold text-espresso-soft transition hover:border-brick hover:text-brick"
             >
-              <RefreshCw size={14} /> Reset
+                <Refresh01Icon size={14} /> Reset
             </button>
             {screenshot && (
               <span className="text-xs font-medium text-sage">Screenshot captured ✓ ready to send</span>
@@ -283,7 +283,7 @@ export default function BuilderPage() {
           <div className="rounded-2xl bg-mint p-4">
             <WhatsAppButton href={whatsappOrderLink(message)} label="Send this cake to WhatsApp" full />
             <p className="mt-2 flex items-center justify-center gap-1 text-center text-xs text-espresso-soft">
-              <ArrowRight size={12} /> Take a screenshot first so you can attach it in the chat.
+                <ArrowRight01Icon size={12} /> Take a screenshot first so you can attach it in the chat.
             </p>
           </div>
         </div>

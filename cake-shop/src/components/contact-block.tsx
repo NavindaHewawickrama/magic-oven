@@ -1,14 +1,14 @@
 "use client";
 
-import { Phone, Mail, MapPin, Globe } from "lucide-react";
+import { Mail01Icon, Globe02Icon, TelephoneIcon, MapPinIcon } from "hugeicons-react";
 import { businessSettings, whatsappOrderLink } from "@/lib/mock-data";
 import WhatsAppButton from "./whatsapp-button";
 
 const infoRows = [
-  { icon: Mail, label: "Email Us", value: businessSettings.email },
-  { icon: Globe, label: "Our Website", value: "sweetlayers.lk" },
-  { icon: Phone, label: "Call Us", value: businessSettings.phone },
-  { icon: MapPin, label: "Our Location", value: businessSettings.address },
+  { icon: Mail01Icon, label: "Email Us", value: businessSettings.email },
+  { icon: Globe02Icon, label: "Our Website", value: "sweetlayers.lk" },
+  { icon: TelephoneIcon, label: "Call Us", value: businessSettings.phone },
+  { icon: MapPinIcon, label: "Our Location", value: businessSettings.address },
 ];
 
 const fields = [

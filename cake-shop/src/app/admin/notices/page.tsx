@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { Add01Icon, Delete01Icon } from "hugeicons-react";
 import DashboardShell from "@/components/dashboard-shell";
 import { adminNav } from "@/lib/admin-nav";
 import { notices as initialNotices } from "@/lib/mock-data";
@@ -29,7 +29,7 @@ export default function AdminNoticesPage() {
           className="w-full rounded-lg border border-line bg-white px-4 py-2.5 text-sm outline-none focus:border-brick"
         />
         <button onClick={add} className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg border border-brick bg-transparent px-5 py-2.5 text-sm font-semibold text-brick transition hover:bg-brick hover:text-cream">
-          <Plus size={16} /> Add
+          <Add01Icon size={16} /> Add
         </button>
       </div>
 
@@ -44,7 +44,7 @@ export default function AdminNoticesPage() {
               >
                 {n.active ? "Active" : "Hidden"}
               </button>
-              <button onClick={() => remove(n.id)}><Trash2 size={16} className="text-espresso-soft hover:text-brick" /></button>
+              <button onClick={() => remove(n.id)}><Delete01Icon size={16} className="text-espresso-soft hover:text-brick" /></button>
             </div>
           </div>
         ))}

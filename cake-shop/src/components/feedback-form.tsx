@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Lock } from "lucide-react";
+import { CircleLock01Icon } from "hugeicons-react";
 import Link from "next/link";
 import { useSession } from "@/lib/auth";
 
@@ -14,7 +14,7 @@ export default function FeedbackForm() {
   if (!session) {
     return (
       <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-line bg-white/70 px-6 py-10 text-center">
-        <Lock className="text-brick" size={22} />
+        <CircleLock01Icon className="text-brick" size={22} />
         <p className="text-sm text-espresso-soft">
           Please log in to leave feedback. This helps us keep reviews trustworthy.
         </p>

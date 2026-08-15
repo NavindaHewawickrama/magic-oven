@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Lock, Star } from "lucide-react";
+import { CircleLock01Icon, StarIcon } from "hugeicons-react";
 import { useSession } from "@/lib/auth";
 
 export default function ReviewForm({ productName }: { productName: string }) {
@@ -15,7 +15,7 @@ export default function ReviewForm({ productName }: { productName: string }) {
   if (!session) {
     return (
       <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-line bg-white/60 px-6 py-8 text-center">
-        <Lock className="text-brick" size={20} />
+        <CircleLock01Icon className="text-brick" size={20} />
         <p className="text-sm text-espresso-soft">
           Log in to leave a review for {productName}.
         </p>
@@ -43,7 +43,7 @@ export default function ReviewForm({ productName }: { productName: string }) {
       <div className="flex gap-1">
         {[1, 2, 3, 4, 5].map((i) => (
           <button type="button" key={i} onClick={() => setRating(i)}>
-            <Star size={22} className={i <= rating ? "fill-butter text-butter" : "text-line"} />
+            <StarIcon size={22} className={i <= rating ? "fill-butter text-butter" : "text-line"} />
           </button>
         ))}
       </div>

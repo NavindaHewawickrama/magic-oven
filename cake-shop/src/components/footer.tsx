@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { businessSettings } from "@/lib/mock-data";
-import { MessageCircle } from "lucide-react";
+import { InstagramIcon, Facebook02Icon, WhatsappIcon } from "hugeicons-react";
 
 export default function Footer() {
   return (
@@ -8,28 +8,32 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
         <div>
           <div className="flex items-baseline gap-1">
-            <span className="font-display text-xl italic font-semibold text-espresso-soft">Sweet</span>
-            <span className="font-display text-xl font-semibold">Cake</span>
+            <span className="font-display text-xl italic font-semibold text-espresso-soft">The Magic</span>
+            <span className="font-display text-xl font-semibold">Oven</span>
           </div>
           <p className="mt-3 text-sm text-cream/90">
-            Handmade cakes, designed with you — from our kitchen in Ratnapura to your table.
+            Handmade cakes, designed with love — from our kitchen in Ratnapura to your table.
           </p>
           <div className="mt-4 flex gap-3 text-lg text-cream/95">
-            <span aria-label="Instagram">📷</span>
-            <span aria-label="Twitter">🐦</span>
-            <span aria-label="Facebook">👍</span>
-            <MessageCircle size={18} />
+            <a href="https://www.instagram.com/_magic_oven_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-coral transition">
+              <InstagramIcon size={24} />
+            </a>
+            <a href="https://web.facebook.com/magicoven96/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-coral transition">
+              <Facebook02Icon size={24} />
+            </a>
+            <a href="https://wa.me/0772896424" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-coral transition">
+              <WhatsappIcon size={24} />
+            </a>
           </div>
         </div>
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-espresso-soft">Quick Links</p>
           <ul className="mt-3 space-y-2 text-sm text-cream/90">
-            <li><Link href="/products">New</Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/products">Our Cakes</Link></li>
             <li><Link href="/about">Why Us</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
-            <li><Link href="/login">SignIn</Link></li>
-            <li><Link href="/register">SignUp</Link></li>
           </ul>
         </div>
 
@@ -44,16 +48,17 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-espresso-soft">Account</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-espresso-soft">Order Info</p>
           <ul className="mt-3 space-y-2 text-sm text-cream/90">
-            <li><Link href="/account">My dashboard</Link></li>
-            <li><Link href="/login">Log in</Link></li>
+            <li>Order via WhatsApp</li>
+            <li>No account needed</li>
+            <li>Fast response guaranteed</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-cream/20 px-5 py-4 text-center text-xs text-cream/80">
-        © {new Date().getFullYear()} Sweet Cake Studio. All orders are confirmed over WhatsApp.
-      </div>
+        <div className="border-t border-cream/20 px-5 py-4 text-center text-xs text-cream/80">
+          © {new Date().getFullYear()} The Magic Oven. All orders are confirmed over WhatsApp.
+        </div>
     </footer>
   );
 }

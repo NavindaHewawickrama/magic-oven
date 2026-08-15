@@ -1,4 +1,4 @@
-import { Cake, MessageSquare, Users, TrendingUp } from "lucide-react";
+import { BirthdayCakeIcon, Message01Icon, User02Icon, Activity01Icon } from "hugeicons-react";
 import DashboardShell from "@/components/dashboard-shell";
 import { adminNav } from "@/lib/admin-nav";
 import { products, generalFeedback, reviews } from "@/lib/mock-data";
@@ -6,10 +6,10 @@ import { products, generalFeedback, reviews } from "@/lib/mock-data";
 export const metadata = { title: "Admin Dashboard — Sweet Layers Cake Studio" };
 
 const stats = [
-  { label: "Live products", value: products.filter((p) => p.inStock).length, icon: Cake },
-  { label: "Pending feedback", value: generalFeedback.filter((f) => !f.approved).length + reviews.filter((r) => !r.approved).length, icon: MessageSquare },
-  { label: "Registered customers", value: 148, icon: Users },
-  { label: "Avg. rating", value: "4.8", icon: TrendingUp },
+  { label: "Live products", value: products.filter((p) => p.inStock).length, icon: BirthdayCakeIcon },
+  { label: "Pending feedback", value: generalFeedback.filter((f) => !f.approved).length + reviews.filter((r) => !r.approved).length, icon: Message01Icon },
+  { label: "Registered customers", value: 148, icon: User02Icon },
+  { label: "Avg. rating", value: "4.8", icon: Activity01Icon },
 ];
 
 export default function AdminDashboardPage() {

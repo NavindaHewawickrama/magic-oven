@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { useSession, clearSession } from "@/lib/auth";
+import { Menu02Icon, CancelCircleIcon } from "hugeicons-react";
+import { WhatsappIcon } from "hugeicons-react";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "New" },
+  { href: "/products", label: "Our Cakes" },
   { href: "/about", label: "Why Us" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -16,24 +16,16 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
-  const { session, ready } = useSession();
-
-  function handleLogout() {
-    clearSession();
-    setOpen(false);
-    router.push("/");
-  }
 
   return (
     <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
         <Link href="/" className="flex items-baseline gap-1">
           <span className="font-display text-2xl italic font-semibold tracking-tight text-brick">
-            Sweet
+            The Magic
           </span>
           <span className="font-display text-2xl font-semibold tracking-tight text-espresso-soft">
-            Cake
+            Oven
           </span>
         </Link>
 
@@ -51,38 +43,16 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-6 md:flex">
-          {ready && session ? (
-            <>
-              <Link
-                href={session.isAdmin ? "/admin" : "/account"}
-                className="text-sm font-medium text-espresso-soft hover:text-brick"
-              >
-                {session.isAdmin ? "Admin" : "My Account"}
-              </Link>
-              <button
-                onClick={handleLogout}
-                className="text-sm font-medium text-espresso-soft hover:text-brick"
-              >
-                Log out
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                href="/register"
-                className="text-sm font-medium text-espresso-soft hover:text-brick"
-              >
-                SignUp
-              </Link>
-              <Link
-                href="/login"
-                className="text-sm font-medium text-espresso-soft hover:text-brick"
-              >
-                SignIn
-              </Link>
-            </>
-          )}
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href="https://wa.me/94712345678?text=Hi! I'd like to order a cake."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-coral bg-coral px-4 py-2 text-sm font-semibold text-cream transition hover:bg-brick"
+          >
+            <WhatsappIcon size={16} />
+            Order Now
+          </a>
         </div>
 
         <button
@@ -91,7 +61,7 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <CancelCircleIcon size={24} /> : <Menu02Icon size={24} />}
         </button>
       </div>
 
@@ -109,29 +79,16 @@ export default function Navbar() {
               </Link>
             ))}
             <hr className="border-line" />
-            {ready && session ? (
-              <>
-                <Link
-                  href={session.isAdmin ? "/admin" : "/account"}
-                  className="text-sm font-medium text-espresso-soft"
-                  onClick={() => setOpen(false)}
-                >
-                  {session.isAdmin ? "Admin dashboard" : "My Account"}
-                </Link>
-                <button onClick={handleLogout} className="text-left text-sm font-medium text-brick">
-                  Log out
-                </button>
-              </>
-            ) : (
-              <>
-                <Link href="/register" className="text-sm font-medium text-espresso-soft" onClick={() => setOpen(false)}>
-                  Sign Up
-                </Link>
-                <Link href="/login" className="text-sm font-medium text-espresso-soft" onClick={() => setOpen(false)}>
-                  Sign In
-                </Link>
-              </>
-            )}
+            <a
+              href="https://wa.me/94712345678?text=Hi! I'd like to order a cake."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-coral bg-coral px-4 py-2 text-sm font-semibold text-cream"
+              onClick={() => setOpen(false)}
+            >
+              <WhatsappIcon size={16} />
+              Order on WhatsApp
+            </a>
           </nav>
         </div>
       )}

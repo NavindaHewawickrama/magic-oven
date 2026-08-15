@@ -1,67 +1,71 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
+import type { User } from "@supabase/supabase-js";
+import { createClient } from "@/lib/supabase/client";
+import type { UserRole } from "@/lib/supabase/database.types";
 
-export type Session = { email: string; name?: string; isAdmin: boolean };
+export type Session = {
+    user: User;
+    name: string;
+    role: UserRole;
+    isAdmin: boolean;
+};
 
-const STORAGE_KEY = "sc_session";
+const [session, setSession] = useState<Session | null>(null);
+const [ready, setReady] = useState(false);
 
-const listeners = new Set<() => void>();
-let cachedSession: Session | null = readSession();
+export function useSession() {
 
-function readSession(): Session | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as Session) : null;
-  } catch {
-    return null;
-  }
-}
 
-function notify() {
-  cachedSession = readSession();
-  listeners.forEach((l) => l());
-}
+    useEffect(() => {
+        const supabase = createClient();
 
-function subscribe(callback: () => void) {
-  listeners.add(callback);
-  window.addEventListener("storage", notify);
-  return () => {
-    listeners.delete(callback);
-    window.removeEventListener("storage", notify);
-  };
-}
+        async function loadProfile(user: User) {
+            const { data: profile } = await supabase
+                .from("profiles")
+                .select("name, role")
+                .eq("id", user.id)
+                .single();
 
-function getSnapshot(): Session | null {
-  return cachedSession;
-}
+            setSession({
+                user,
+                name: profile?.name ?? user.email ?? "Customer",
+                role: profile?.role ?? "customer",
+                isAdmin: profile?.role === "admin" || profile?.role === "manager",
+            });
+            setReady(true);
+        }
 
-function getServerSnapshot(): Session | null {
-  return null;
-}
+        supabase.auth.getUser().then(({ data: { user } }) => {
+            if (user) loadProfile(user);
+            else setReady(true);
+        });
 
-export function getSession(): Session | null {
-  return cachedSession;
-}
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, authSession) => {
+            if (authSession?.user) {
+                loadProfile(authSession.user);
+            } else {
+                setSession(null);
+                setReady(true);
+            }
+        });
 
-export function setSession(session: Session) {
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
-  notify();
+        return () => subscription.unsubscribe();
+    }, []);
+
+    return { session, ready };
 }
 
 export function clearSession() {
-  window.localStorage.removeItem(STORAGE_KEY);
-  notify();
+    setSession(null);
+    setReady(true);
+    return { session, ready }
 }
 
-export function useSession() {
-  const session = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const ready = useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false
-  );
-
-  return { session, ready };
+export async function signOut() {
+    const supabase = createClient();
+    await supabase.auth.signOut();
 }

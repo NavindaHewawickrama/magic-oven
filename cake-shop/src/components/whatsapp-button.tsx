@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { Message01Icon } from "hugeicons-react";
 
 export default function WhatsAppButton({
   href,
@@ -18,7 +18,7 @@ export default function WhatsAppButton({
         full ? "w-full" : ""
       }`}
     >
-      <MessageCircle size={16} />
+      <Message01Icon size={16} />
       {label}
     </a>
   );

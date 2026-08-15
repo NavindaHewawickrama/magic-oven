@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Search01Icon } from "hugeicons-react";
 import { products, Product } from "@/lib/mock-data";
 import ProductCard from "@/components/product-card";
 
@@ -40,7 +40,7 @@ export default function ProductCatalog() {
             Search
           </label>
           <div className="mt-2 flex items-center gap-2 rounded-lg border border-line bg-white/80 px-4 py-2">
-            <Search size={15} className="text-espresso-soft" />
+            <Search01Icon size={15} className="text-espresso-soft" />
             <input
               value={query}
               onChange={(e) => { setQuery(e.target.value); setPage(1); }}

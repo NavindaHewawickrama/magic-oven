@@ -19,14 +19,14 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "1",
-    slug: "classic-carrot-cake",
-    name: "Classic Carrot Cake",
-    category: "Birthday",
+    slug: "Wedding",
+    name: "Pink Wedding Cake",
+    category: "Wedding",
     price: 4200,
     rating: 4.8,
     reviewCount: 32,
-    thumbnail: "🥕",
-    description: "A moist spiced carrot cake layered with tangy cream-cheese frosting and toasted walnuts.",
+    thumbnail: "🎉",
+    description: "A pink wedding cake.",
     ingredients: ["Carrot", "Walnut", "Cream cheese", "Cinnamon", "Free-range eggs"],
     flavor: "Spiced carrot & cream cheese",
     weight: "1.5 kg",
@@ -188,12 +188,14 @@ export const discounts = [
 ];
 
 export const businessSettings = {
-  businessName: "Sweet Layers Cake Studio",
-  phone: "+94 71 234 5678",
-  whatsapp: "+94712345678",
-  email: "hello@sweetlayers.lk",
+  businessName: "The Magic Oven",
+  phone: "077 289 6424",
+  whatsapp: "0772896424",
+  email: "magicoven96@gmail.com",
   hours: "Tue – Sun, 9:00 AM – 7:00 PM",
-  address: "142 Main Street, Ratnapura, Sri Lanka",
+  address: "Arangala, Malabe, Sri Lanka",
+  facebook: "https://web.facebook.com/magicoven96/?_rdc=1&_rdr#",
+  messenger: "The Magic Oven",
 };
 
 export function whatsappOrderLink(text: string) {
