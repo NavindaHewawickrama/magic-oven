@@ -1,18 +1,37 @@
-import ProductCatalog from "./product-catalog";
+import { businessSettings, whatsappOrderLink } from "@/lib/mock-data";
+import { MessageCircle } from "lucide-react";
 
-export const metadata = { title: "All Cakes — Sweet Layers Cake Studio" };
-
-export default function ProductsPage() {
+export default function Products() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
-      <p className="eyebrow">Full catalog</p>
-      <h1 className="mt-1 font-display text-4xl font-semibold">Every cake we bake</h1>
-      <p className="mt-3 max-w-lg text-espresso">
-        Search, filter and browse — or skip straight to designing your own in the{" "}
-        <a href="/builder" className="font-semibold text-peach-dark underline">Cake Builder</a>.
-      </p>
-      <div className="mt-10">
-        <ProductCatalog />
+    <div className="py-16">
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="text-center">
+          <h1 className="font-display text-4xl font-bold text-brick md:text-5xl">Our Cake Collection</h1>
+          <p className="divider-flourish mx-auto mt-4 w-24" />
+          <p className="mt-5 max-w-2xl mx-auto text-sm text-espresso">
+            Browse our selection of delicious handmade cakes. Contact us on WhatsApp to place your order!
+          </p>
+        </div>
+
+        <div className="mt-12 rounded-2xl bg-cream p-8 md:p-12 text-center">
+          <div className="text-6xl mb-4">🎂</div>
+          <h2 className="font-display text-2xl font-semibold text-brick">Coming Soon</h2>
+          <p className="mt-4 max-w-xl mx-auto text-sm text-espresso">
+            We're preparing a beautiful catalog of our cake collection with detailed images, descriptions, and pricing.
+          </p>
+          <p className="mt-4 text-sm text-espresso-soft">
+            For now, browse our cake gallery on the <a href="/" className="text-brick underline">homepage</a> or contact us directly on WhatsApp to see our full range!
+          </p>
+          <a
+            href={whatsappOrderLink("Hi! I'd like to see your cake catalog.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg border border-coral bg-coral px-6 py-3 text-sm font-semibold text-cream transition hover:bg-brick"
+          >
+            <MessageCircle size={18} />
+            View Cakes on WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   );
