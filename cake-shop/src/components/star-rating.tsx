@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { StarIcon } from "hugeicons-react";
 
 export default function StarRating({
   rating,
@@ -13,7 +13,7 @@ export default function StarRating({
     <div className="flex items-center gap-1">
       <div className="flex">
         {Array.from({ length: 5 }).map((_, i) => (
-          <Star
+          <StarIcon
             key={i}
             size={size}
             className={i < Math.round(rating) ? "fill-peach text-peach" : "text-line"}

@@ -1,4 +1,4 @@
-import { Upload } from "lucide-react";
+import { Upload01Icon } from "hugeicons-react";
 import DashboardShell from "@/components/dashboard-shell";
 import { adminNav } from "@/lib/admin-nav";
 import { businessSettings } from "@/lib/mock-data";
@@ -23,7 +23,7 @@ export default function SettingsPage() {
           <div className="mt-4 flex items-center gap-5">
             <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-cream-dim text-4xl">🍰</div>
             <button className="inline-flex items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-semibold text-espresso hover:border-peach-dark hover:text-peach-dark">
-              <Upload size={15} /> Replace logo
+              <Upload01Icon size={15} /> Replace logo
             </button>
           </div>
           <p className="mt-2 text-xs text-espresso">Used in the navbar, footer, and favicon. Recommended: square PNG or SVG, transparent background.</p>

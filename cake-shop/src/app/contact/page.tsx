@@ -1,5 +1,6 @@
+"use client";
 import { businessSettings, whatsappOrderLink } from "@/lib/mock-data";
-import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Message01Icon, TelephoneIcon, Mail01Icon, MapPinIcon } from "hugeicons-react";
 
 export default function Contact() {
   return (
@@ -19,7 +20,7 @@ export default function Contact() {
             
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone size={20} className="mt-0.5 shrink-0 text-coral" />
+                <TelephoneIcon size={20} className="mt-0.5 shrink-0 text-coral" />
                 <div>
                   <p className="text-sm font-semibold text-espresso-soft">Phone</p>
                   <p className="text-sm text-espresso">{businessSettings.phone}</p>
@@ -27,7 +28,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail size={20} className="mt-0.5 shrink-0 text-coral" />
+                <Mail01Icon size={20} className="mt-0.5 shrink-0 text-coral" />
                 <div>
                   <p className="text-sm font-semibold text-espresso-soft">Email</p>
                   <p className="text-sm text-espresso">{businessSettings.email}</p>
@@ -35,7 +36,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin size={20} className="mt-0.5 shrink-0 text-coral" />
+                <MapPinIcon size={20} className="mt-0.5 shrink-0 text-coral" />
                 <div>
                   <p className="text-sm font-semibold text-espresso-soft">Address</p>
                   <p className="text-sm text-espresso">{businessSettings.address}</p>
@@ -43,7 +44,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <MessageCircle size={20} className="mt-0.5 shrink-0 text-coral" />
+                <Message01Icon size={20} className="mt-0.5 shrink-0 text-coral" />
                 <div>
                   <p className="text-sm font-semibold text-espresso-soft">WhatsApp</p>
                   <p className="text-sm text-espresso">{businessSettings.whatsapp}</p>
@@ -119,7 +120,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-lg border border-cream bg-cream px-8 py-3 text-sm font-semibold text-brick transition hover:bg-cream/90"
           >
-            <MessageCircle size={18} />
+            <Message01Icon size={18} />
             Chat on WhatsApp
           </a>
         </div>

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { MessageCircle } from "lucide-react";
+import { Menu02Icon, CancelCircleIcon } from "hugeicons-react";
+import { WhatsappIcon } from "hugeicons-react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -50,7 +50,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-coral bg-coral px-4 py-2 text-sm font-semibold text-cream transition hover:bg-brick"
           >
-            <MessageCircle size={16} />
+            <WhatsappIcon size={16} />
             Order Now
           </a>
         </div>
@@ -61,7 +61,7 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <CancelCircleIcon size={24} /> : <Menu02Icon size={24} />}
         </button>
       </div>
 
@@ -86,7 +86,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-2 rounded-lg border border-coral bg-coral px-4 py-2 text-sm font-semibold text-cream"
               onClick={() => setOpen(false)}
             >
-              <MessageCircle size={16} />
+              <WhatsappIcon size={16} />
               Order on WhatsApp
             </a>
           </nav>

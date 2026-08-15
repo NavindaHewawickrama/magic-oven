@@ -1,5 +1,5 @@
 import { businessSettings, whatsappOrderLink } from "@/lib/mock-data";
-import { MessageCircle } from "lucide-react";
+import { BirthdayCakeIcon, Message01Icon } from "hugeicons-react";
 
 export default function Products() {
   return (
@@ -14,7 +14,7 @@ export default function Products() {
         </div>
 
         <div className="mt-12 rounded-2xl bg-cream p-8 md:p-12 text-center">
-          <div className="text-6xl mb-4">🎂</div>
+          <div className="text-6xl mb-4 flex items-center justify-center"><BirthdayCakeIcon size={96} className="text-brick" /></div>
           <h2 className="font-display text-2xl font-semibold text-brick">Coming Soon</h2>
           <p className="mt-4 max-w-xl mx-auto text-sm text-espresso">
             We're preparing a beautiful catalog of our cake collection with detailed images, descriptions, and pricing.
@@ -28,7 +28,7 @@ export default function Products() {
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-lg border border-coral bg-coral px-6 py-3 text-sm font-semibold text-cream transition hover:bg-brick"
           >
-            <MessageCircle size={18} />
+            <Message01Icon size={18} />
             View Cakes on WhatsApp
           </a>
         </div>
